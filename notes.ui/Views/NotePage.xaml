@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="notes.ui.Views.NotePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="NotePage">
+    <VerticalStackLayout Margin="5" Spacing="10">
+        <Editor
+            x:Name="txtEditor"
+            HeightRequest="100"
+            Placeholder="Insira sua nota"
+            Text="{Binding Text}" />
+
+
+
+        <Grid.Resources>
+            <ResourceDictionary>
+                <Style TargetType="Button">
+
+                    <Setter Property="BackgroundColor" Value="{AppThemeBinding Light='#F2613F', Dark='#F2613F'}" />
+                    <Setter Property="FontSize" Value="20" />
+                    <Setter Property="HeightRequest" Value="60" />
+                    <Setter Property="MaximumWidthRequest" Value="190" />
+                    <Setter Property="TextColor" Value="{AppThemeBinding Light='Black', Dark='White'}" />
+                    <Setter Property="CornerRadius" Value="20" />
+                </Style>
+            </ResourceDictionary>
+        </Grid.Resources>
+        <Grid ColumnDefinitions="*,*" ColumnSpacing="4">
+            <Button
+                x:Name="Save"
+                BackgroundColor="{AppThemeBinding Dark='gray',
+                Light='#F2613F'}"
+                Clicked="Save_Clicked"
+                Text="Save" />
+            <Button
+                x:Name="Delete"
+                Grid.Column="1"
+                Clicked="Delete_Clicked"
+                Text="Delete" />
+
+
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

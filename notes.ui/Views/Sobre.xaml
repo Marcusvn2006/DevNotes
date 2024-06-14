@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="notes.ui.Views.Sobre"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:notes.ui.Models"
+    Title="Sobre">
+    <ContentPage.BindingContext>
+        <models:Sobre />
+
+
+    </ContentPage.BindingContext>
+    <VerticalStackLayout Margin="10" Spacing="10">
+        <HorizontalStackLayout Spacing="10">
+            <Image
+                HeightRequest="64"
+                SemanticProperties.Description="gato maluco"
+                Source="gato.png" />
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="22"
+                Text="{Binding Title}"
+                VerticalOptions="End" />
+            <Label
+                FontAttributes="Bold"
+                FontSize="22"
+                Text="{Binding Version}"
+                VerticalOptions="End" />
+        </HorizontalStackLayout>
+        <Label Text="{Binding Menssage}" />
+        <Button
+            BackgroundColor="{AppThemeBinding Dark='#F2613F',
+            Light='#F2613F'}"
+            Clicked="Button_Clicked"
+            Text="Saiba mais..." />
+    </VerticalStackLayout>
+</ContentPage>
